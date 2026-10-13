@@ -1,0 +1,18 @@
+# core: IR, compiler, runtime, toy lab, bench, rule-based / retrieval grounders, all evaluations
+numpy>=1.24
+PyYAML>=6.0
+scikit-learn>=1.3        # TF-IDF retrieval grounder (knn / hybrid:knn)
+
+# neural grounders (LoRA Qwen3-8B, HF zero-shot, SciBERT baseline)
+torch>=2.2               # CUDA build needed for Qwen3-8B; CPU is enough for the tests
+transformers>=4.51       # Qwen3 support
+peft>=0.12
+accelerate>=0.30
+tokenizers>=0.19
+# bitsandbytes>=0.43     # optional: 4-bit QLoRA (load_in_4bit: true in configs/grounder_lora.yaml)
+
+# API grounder (OpenAI-compatible endpoint, e.g. vLLM serving Qwen3-32B)
+openai>=1.0
+
+# tests
+pytest>=7

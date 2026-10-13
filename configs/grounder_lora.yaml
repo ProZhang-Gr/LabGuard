@@ -1,0 +1,25 @@
+# LabGuard-Hybrid: LoRA-tuned Qwen3-8B + IR-grammar constrained decoding + regex substance fallback
+# and predicate repair (Sec. 4.2).  Needs a CUDA build of torch (and bitsandbytes for 4-bit).
+#   python scripts/train_grounder.py --config configs/grounder_lora.yaml --protocol random
+#   python scripts/eval_grounding.py --spec configs/grounder_lora.yaml --protocol source
+type: hybrid
+substance_fallback: true
+repair_predicate: true
+neural:
+  type: lora
+  adapter: runs/lora/qwen3-8b       # fold/seed sub-directories are appended by eval.grounding._with_root
+  constrained: true
+  batch_size: 8
+  max_new_tokens: 160
+  train_config:
+    base_model: Qwen/Qwen3-8B
+    r: 16
+    alpha: 32
+    dropout: 0.05
+    lr: 2.0e-4
+    epochs: 3
+    batch_size: 4
+    grad_accum: 4
+    max_len: 384
+    load_in_4bit: true      # fits a 16 GB GPU; set false on >= 40 GB
+    gradient_checkpointing: true

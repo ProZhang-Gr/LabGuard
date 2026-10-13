@@ -1,0 +1,20 @@
+# LabGuard inside LabUtopia (integrations/labutopia/main_labguard.py --labguard-config configs/labutopia.yaml)
+shield:
+  semantic: true
+  kinematic: true
+  planning: false       # LabUtopia's ACT controllers do not expose a skill plan
+  risk: true
+  logging: true
+  filter:
+    dt: 0.0166667       # LabUtopia physics step (1/60 s)
+
+adapter:
+  robot_base: [0.0, 0.0, 0.0]   # overwritten by cfg.robot.position when available
+  dt: 0.0166667
+  lookahead_steps: 5
+  pour_rate_per_rad_s: 20.0
+  ppe: [gloves, goggles, lab_coat]
+  # equipment present in the LabUtopia scene (id -> kind / flags / world position)
+  equipment:
+    hot_plate_1: {kind: hot_plate, flags: {on: false, calibrated: true, clean: true}, position: [0.5, 0.28, 0.0]}
+    fume_hood_1: {kind: fume_hood, flags: {on: true, sash_lowered: true}, position: [0.62, -0.3, 0.0]}

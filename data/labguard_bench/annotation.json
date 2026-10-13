@@ -1,0 +1,24 @@
+{
+ "items": 812,
+ "annotators": 5,
+ "full_agreement_rate": 0.26108374384236455,
+ "revised_rate": 0.013546798029556651,
+ "mean_vote_agreement": 0.9552134646962235,
+ "fleiss_kappa": {
+  "constraint_type": 0.9344,
+  "substances": 0.9519,
+  "predicate": 0.9339,
+  "action_scope": 0.8885,
+  "severity": 0.6912,
+  "intervention": 0.893
+ },
+ "majority_rate": {
+  "constraint_type": 1.0,
+  "substances": 1.0,
+  "predicate": 1.0,
+  "action_scope": 0.9950738916256158,
+  "severity": 0.9950738916256158,
+  "intervention": 1.0
+ },
+ "simulated": true
+}

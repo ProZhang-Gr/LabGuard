@@ -1,0 +1,3 @@
+# SciBERT multi-head encoder baseline (classification heads over the closed IR vocabularies).
+type: scibert
+checkpoint: runs/scibert

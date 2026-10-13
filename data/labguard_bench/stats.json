@@ -1,0 +1,111 @@
+{
+ "n_seeds": 203,
+ "n_examples": 812,
+ "type_counts": {
+  "chemical_incompatibility": 132,
+  "equipment_check": 100,
+  "sequence_constraint": 80,
+  "exposure_limit": 68,
+  "temperature_constraint": 64,
+  "ventilation_requirement": 60,
+  "fire_safety": 56,
+  "ppe_requirement": 52,
+  "velocity_limit": 40,
+  "waste_handling": 36,
+  "spill_prevention": 36,
+  "container_capacity": 24,
+  "storage_constraint": 24,
+  "workspace_zone": 20,
+  "force_limit": 20
+ },
+ "source_seed_counts": {
+  "lab_manual": 71,
+  "pubchem_ghs": 62,
+  "expert": 50,
+  "chem_safety_ref": 20
+ },
+ "difficulty_seed_counts": {
+  "easy": 71,
+  "medium": 105,
+  "hard": 27
+ },
+ "source_type_seed_counts": {
+  "lab_manual": {
+   "equipment_check": 13,
+   "sequence_constraint": 10,
+   "temperature_constraint": 10,
+   "velocity_limit": 10,
+   "spill_prevention": 9,
+   "container_capacity": 6,
+   "workspace_zone": 5,
+   "force_limit": 5,
+   "waste_handling": 3
+  },
+  "pubchem_ghs": {
+   "exposure_limit": 17,
+   "ventilation_requirement": 15,
+   "fire_safety": 14,
+   "ppe_requirement": 13,
+   "waste_handling": 3
+  },
+  "expert": {
+   "chemical_incompatibility": 16,
+   "equipment_check": 12,
+   "sequence_constraint": 10,
+   "temperature_constraint": 6,
+   "storage_constraint": 3,
+   "waste_handling": 3
+  },
+  "chem_safety_ref": {
+   "chemical_incompatibility": 17,
+   "storage_constraint": 3
+  }
+ },
+ "held_out_chemical": "HCl",
+ "held_out_seeds": 9,
+ "held_out_examples": 36,
+ "paraphrase_methods": {
+  "template": 437,
+  "cue": 41,
+  "cue+": 20,
+  "lexical": 48,
+  "lexical+": 12,
+  "alias+": 20,
+  "alias": 30,
+  "wrapper": 1
+ },
+ "severity_counts": {
+  "medium": 81,
+  "low": 17,
+  "high": 105
+ },
+ "intervention_counts": {
+  "block": 126,
+  "log": 25,
+  "modify": 52
+ },
+ "unique_seed_irs": 203,
+ "schema_valid": 1.0,
+ "compile_ready": 1.0,
+ "mean_complexity": {
+  "easy": 0.0,
+  "medium": 0.352,
+  "hard": 1.833
+ },
+ "mean_tokens": 14.86,
+ "config": {
+  "seed": 0,
+  "n_paraphrases": 3,
+  "held_out_chemical": "HCl",
+  "paraphraser": "template",
+  "annotate": true,
+  "n_annotators": 5,
+  "max_tries": 400,
+  "difficulty_counts": {
+   "easy": 71,
+   "medium": 105,
+   "hard": 27
+  }
+ },
+ "paper_check": []
+}

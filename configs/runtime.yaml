@@ -1,0 +1,22 @@
+# Runtime safety layer (Sec. 4.4, Appendix B).  Loaded with ShieldConfig.from_dict(cfg["shield"]).
+shield:
+  semantic: true        # compiled rule monitors (SafeFilter, Eq. 5-7)
+  kinematic: true       # barrier-style ActionFilter (Eq. 8-11)
+  planning: true        # PlanChecker on the skill plan before execution
+  risk: true            # diagnostic risk score (Eq. 12); never changes verdicts
+  logging: true
+  risk_weights: [0.25, 0.25, 0.30, 0.20]   # w_v, w_p, w_c, w_u (Eq. 12)
+  risk_tau: 0.6
+  filter:
+    alpha: 0.8               # velocity scaling (Eq. 9)
+    delta: 0.05              # joint-limit barrier margin, rad (Eq. 10-11)
+    workspace_margin: 0.01   # m (Eq. 8)
+    dt: 0.05
+    workspace_zone: workspace
+
+# Evaluation protocol of run_runtime / run_ablation (scripts/run_runtime.py, scripts/run_ablation.py)
+eval:
+  seeds: [0, 1, 2]
+  episodes: 10          # per seed and task (Table 9 uses 30)
+  policy:
+    error_rate: 0.2     # NoisyScriptedPolicy error-injection probability per skill

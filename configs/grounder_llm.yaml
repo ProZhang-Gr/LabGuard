@@ -1,0 +1,8 @@
+# Prompted LLM baseline (Table 2, "0-shot" / "few-shot" rows) through any OpenAI-compatible endpoint
+# (OpenAI, vLLM, Ollama ...).  Set OPENAI_API_KEY / OPENAI_BASE_URL in the environment.
+type: llm
+model: Qwen/Qwen3-32B
+shots: 0
+temperature: 0.0
+max_tokens: 256
+workers: 4
